@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>lessonInfo</title>
+<script type="text/javascript" src="js/common/common.js"></script>
+<script type="text/javascript" src="js/common/jquery.min.js"></script>
+<script type="text/javascript" src="js/common/jquery.js"></script>
+
+<script type="text/javascript" src="layui/layui.js"></script>
+<link rel="stylesheet" href="layui/css/layui.css">
+<script type="text/javascript" src="js/lessonInfo.js"></script>
+
+
+</head>
+<body>
+	<ul class="layui-nav" lay-filter="">
+		<li class="layui-nav-item"><a href="index.html">自定义查询</a></li>
+		<li class="layui-nav-item"><a href="teacherSta.html">老师排课查询</a></li>
+		<li class="layui-nav-item layui-this"><a href="lessonInfo.html">课程新查询</a></li>
+		<li class="layui-nav-item"><a href="frequentquery.html">常用查询</a></li>
+		<li class="layui-nav-item"><a href="dbManager.html">数据源管理</a></li>
+		<li class="layui-nav-item"><a href="javascript:;">数据分析</a>
+			<dl class="layui-nav-child">
+				<!-- 二级菜单 -->
+				<dd>
+					<a href="dataAnalysis/teacher.html">老师分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/lesson.html">课程分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">学员分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">即席分析</a>
+				</dd>
+			</dl></li>
+	</ul>
+
+	<form class="layui-form" action="" style="padding-top: 20px;">
+		<div class="layui-form-item">
+			<label class="layui-form-label">class_id</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="请输入班级id" autocomplete="off" class="layui-input"
+					id="classId" value="32759559">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">room_id</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="请输入roomId" autocomplete="off" class="layui-input"
+					id="roomId" value="47572">
+			</div>
+		</div>
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">开始日期</label>
+					<div class="layui-input-inline">
+						<input type="text" class="layui-input" id="start_date"
+							placeholder="yyyy-MM-dd">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">结束日期</label>
+					<div class="layui-input-inline">
+						<input type="text" class="layui-input" id="end_date"
+							placeholder="yyyy-MM-dd">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="go">run</button>
+				<button type="reset" class="layui-btn layui-btn-primary">reset</button>
+
+			</div>
+		</div>
+	</form>
+
+	<table class="layui-table">
+		<colgroup>
+			<col width="150">
+			<col width="200">
+			<col>
+		</colgroup>
+		<thead id="t_head">
+		</thead>
+
+		<tbody id="t_body">
+		</tbody>
+	</table>
+
+</body>
+</html>

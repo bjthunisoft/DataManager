@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dbManager</title>
+<script type="text/javascript" src="js/common/common.js"></script>
+<script type="text/javascript" src="js/common/jquery.min.js"></script>
+<script type="text/javascript" src="js/common/jquery.js"></script>
+
+<script type="text/javascript" src="layui/layui.js"></script>
+<link rel="stylesheet" href="layui/css/layui.css">
+<script type="text/javascript" src="js/frequentquery.js"></script>
+
+
+</head>
+<body>
+	<ul class="layui-nav" lay-filter="">
+		<li class="layui-nav-item"><a href="">自定义查询</a></li>
+		<li class="layui-nav-item"><a href="teacherSta.html">老师排课查询</a></li>
+		<li class="layui-nav-item"><a href="lessonInfo.html">课程新查询</a></li>
+		<li class="layui-nav-item"><a href="frequentquery.html">常用查询</a></li>
+		<li class="layui-nav-item layui-this"><a href="dbManager.html">数据源管理</a></li>
+		<li class="layui-nav-item"><a href="javascript:;">数据分析</a>
+			<dl class="layui-nav-child">
+				<!-- 二级菜单 -->
+				<dd>
+					<a href="dataAnalysis/teacher.html">老师分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/lesson.html">课程分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">学员分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">即席分析</a>
+				</dd>
+			</dl></li>
+	</ul>
+
+	<form class="layui-form" action="" style="padding-top: 20px;">
+		<div class="layui-form-item">
+			<label class="layui-form-label">host</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="数据库服务器主机地址" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">port</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="数据库服务器端口" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">dataBase</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="数据库实例" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">dbUser</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="数据库服实例登录名" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">dbPass</label>
+			<div class="layui-input-inline">
+				<input type="password" name="password" required
+					lay-verify="required" placeholder="数据库服实例登录密码" autocomplete="off"
+					class="layui-input">
+			</div>
+			<!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="formDemo">tesingConnection</button>
+				<button class="layui-btn" lay-submit lay-filter="formDemo">save</button>
+				<button type="reset" class="layui-btn layui-btn-primary">reset</button>
+				
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>

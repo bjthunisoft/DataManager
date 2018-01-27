@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>freeQuery</title>
+<script type="text/javascript" src="js/common/common.js"></script>
+<script type="text/javascript" src="js/common/jquery.min.js"></script>
+<script type="text/javascript" src="js/common/jquery.js"></script>
+
+<script type="text/javascript" src="layui/layui.js"></script>
+<link rel="stylesheet" href="layui/css/layui.css">
+<script type="text/javascript" src="js/index.js"></script>
+
+</head>
+
+<body>
+	<ul class="layui-nav" lay-filter="">
+		<li class="layui-nav-item layui-this"><a href="">自定义查询</a></li>
+		<li class="layui-nav-item"><a href="teacherSta.html">老师排课查询</a></li>
+		<li class="layui-nav-item"><a href="lessonInfo.html">课程新查询</a></li>
+		<li class="layui-nav-item"><a href="frequentquery.html">常用查询</a></li>
+		<li class="layui-nav-item"><a href="dbManager.html">数据源管理</a></li>
+		<li class="layui-nav-item"><a href="javascript:;">数据分析</a>
+			<dl class="layui-nav-child">
+				<!-- 二级菜单 -->
+				<dd>
+					<a href="dataAnalysis/teacher.html">老师分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/lesson.html">课程分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">学员分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">即席分析</a>
+				</dd>
+			</dl></li>
+	</ul>
+
+	<form class="layui-form">
+		<div class="layui-form-item layui-form-text"
+			style="padding-top: 20px;">
+			<label class="layui-form-label">DataBase</label>
+			<div class="layui-input-block">
+				<select id="dataBase" lay-verify="" lay-search>
+					<option value=""></option>
+					<option value="teanew">中教库(teanew)</option>
+					<option value="talkplatform_teacher">外教库(talkplatform_teacher)</option>
+					<option value="talkplatform_course">课程库(talkplatform_course)</option>
+					<option value="multi_class">老师库(multi_class)</option>
+				</select>
+			</div>
+		</div>
+		<div class="layui-form-item layui-form-text">
+			<label class="layui-form-label">SQL</label>
+			<div class="layui-input-block">
+				<textarea name="desc" placeholder="请输入" class="layui-textarea"
+					id="querySql">select tea_id,class_id,room_id,start_time,end_time from base_course_lesson limit 11;</textarea>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="go">run</button>
+				<button type="reset" class="layui-btn layui-btn-primary">reset</button>
+			</div>
+		</div>
+	</form>
+
+	<table class="layui-table">
+		<colgroup>
+			<col width="150">
+			<col width="200">
+			<col>
+		</colgroup>
+		<thead id="t_head">
+		</thead>
+
+		<tbody id="t_body">
+		</tbody>
+	</table>
+	
+	
+
+</body>
+</html>

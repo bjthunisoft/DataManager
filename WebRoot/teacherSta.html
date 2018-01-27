@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>teacherStatistics</title>
+<script type="text/javascript" src="js/common/common.js"></script>
+<script type="text/javascript" src="js/common/jquery.min.js"></script>
+<script type="text/javascript" src="js/common/jquery.js"></script>
+
+<link rel="stylesheet" href="layui/css/layui.css">
+<script type="text/javascript" src="layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/tSta.js"></script>
+</head>
+<body>
+	<ul class="layui-nav">
+			<li class="layui-nav-item"><a href="index.html">自定义查询</a></li>
+		<li class="layui-nav-item layui-this"><a href="teacherSta.html">老师排课查询</a></li>
+		<li class="layui-nav-item"><a href="lessonInfo.html">课程新查询</a></li>
+		<li class="layui-nav-item"><a href="frequentquery.html">常用查询</a></li>
+		<li class="layui-nav-item"><a href="dbManager.html">数据源管理</a></li>
+		<li class="layui-nav-item"><a href="javascript:;">数据分析</a>
+			<dl class="layui-nav-child">
+				<!-- 二级菜单 -->
+				<dd>
+					<a href="dataAnalysis/teacher.html">老师分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/lesson.html">课程分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">学员分析</a>
+				</dd>
+				<dd>
+					<a href="dataAnalysis/student.html">即席分析</a>
+				</dd>
+			</dl></li>
+	</ul>
+
+	<form class="layui-form" style="padding-top: 20px;">
+		<div class="layui-form-item">
+			<label class="layui-form-label">teahcerId</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" required lay-verify="required"
+					placeholder="请输入老师id" autocomplete="off" class="layui-input"
+					id="tid" value="5310">
+			</div>
+		</div>
+
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">开始日期</label>
+					<div class="layui-input-inline">
+						<input type="text" class="layui-input" id="start_date"
+							placeholder="yyyy-MM-dd">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">结束日期</label>
+					<div class="layui-input-inline">
+						<input type="text" class="layui-input" id="end_date"
+							placeholder="yyyy-MM-dd">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="run">run</button>
+				<button type="reset" class="layui-btn layui-btn-primary">reset</button>
+
+			</div>
+		</div>
+	</form>
+
+	<div class="layui-form" style="padding-top: 20px;">
+		<h3 style="display: none; padding-left: 20px;" id="tinfo_title">基本信息</h3>
+		<table class="layui-table" id="tinfo">
+			<colgroup>
+				<col width="150">
+				<col width="200">
+				<col>
+			</colgroup>
+			<thead id="info_t_head">
+			</thead>
+
+			<tbody id="info_t_body">
+			</tbody>
+		</table>
+		
+		<h3 style="display: none; padding-left: 20px;" id="tlesson_title">排课信息</h3>
+		<table class="layui-table" id="tlesson">
+			<colgroup>
+				<col width="200">
+				<col width="200">
+				<col>
+			</colgroup>
+			<thead id="lesson_t_head">
+			</thead>
+
+			<tbody id="lesson_t_body">
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
